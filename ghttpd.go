@@ -14,7 +14,7 @@ func main() {
 	app.Usage = "serve a directory using HTTP"
 
 	app.Flags = []cli.Flag{
-		cli.IntFlag{"port, p", 8080, "port ghttpd listens on", "GHTTPD_PORT"},
+		cli.IntFlag{Name: "port, p", Value: 8080, Usage: "port ghttpd listens on", EnvVar: "GHTTPD_PORT"},
 	}
 
 	app.Action = func(c *cli.Context) {
