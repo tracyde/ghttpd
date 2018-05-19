@@ -1,0 +1,14 @@
+[Unit]
+Description=ghttpd server
+After=network.target
+
+[Service]
+ExecStart=/usr/local/bin/ghttpd --port 80 /srv/ghttpd
+Restart=always
+RestartSec=5
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=ghttpd
+
+[Install]
+WantedBy=multi-user.target
